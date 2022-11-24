@@ -1,0 +1,152 @@
+.products--grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 1.6rem;
+}
+
+// Detalle del producto
+.product-detail {
+  width: 35rem;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: white;
+  transition: all ease-out .5s;
+  transform: translateX(100%);
+  &.active{
+    transform: translateX(0);
+  }
+}
+
+.product-detail > img:first-child {
+  background-color: var(--white);
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  height: 20px;
+  padding: 4px;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.product-detail > img:first-child:hover {
+  cursor: pointer;
+}
+
+.product-image {
+  width: 100%;
+  border-radius: 1.6rem 1.6rem 0 0;
+}
+
+.product-info {
+  margin: 16% 16%;
+}
+
+.product-info p {
+  font-weight: 300;
+  color: var(--black);
+  margin-top: 16px;
+}
+
+.product-info p:first-child {
+  font-weight: 700;
+  color: var(--black);
+}
+
+.product-info :nth-child(3) {
+  margin-top: 20px;
+}
+
+.add-to-cart {
+  width: 90%;
+  margin: 0 16px;
+  position: absolute;
+  bottom: 20px;
+}
+
+.primary-button {
+  width: 100%;
+  background-color: var(--hospital-green);
+  border: none;
+  border-radius: 8px;
+  color: var(--white);
+  font-weight: 700;
+  height: 40px;
+  cursor: pointer;
+  font-size: var(--md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.primary-button img {
+  margin-right: 4px;
+}
+
+.secondary-button {
+  width: 100%;
+  background-color: var(--white);
+  border: 1px solid var(--hospital-green);
+  border-radius: 8px;
+  color: var(--hospital-green);
+  font-weight: 700;
+  height: 40px;
+  cursor: pointer;
+  font-size: var(--md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.6rem;
+}
+
+.delete-button {
+  width: 100%;
+  background-color: var(--white);
+  border: 1px solid var(--red);
+  border-radius: 8px;
+  color: var(--red);
+  font-weight: 700;
+  height: 40px;
+  cursor: pointer;
+  font-size: var(--md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.6rem;
+}
+
+svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.load-more {
+  width: 90%;
+  margin: 1.6rem auto;
+  > svg {
+    margin-right: 0.5rem;
+  }
+}
+
+// Tablets
+@media (min-width: 640px) {
+  .products--grid {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0 0.8rem;
+  }
+}
+
+// Desktop
+@media screen and (min-width: 1200px) {
+  .products--grid {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

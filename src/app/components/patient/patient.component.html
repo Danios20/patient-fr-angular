@@ -1,0 +1,16 @@
+<!-- <h2>{{ patient._id }}</h2> -->
+
+<div class="product-card">
+  <div class="product-info">
+    <div>
+      <p>{{ patient.patient }}</p>
+      <p>{{ patient.documentType }}: {{ patient.document }}</p>
+      <p>{{ patient.bloodType }}</p>
+    </div>
+  </div>
+
+  <button (click)="onShowDetail()" class="show-detail-btn">
+    Ver detalle
+  </button>
+</div>
+

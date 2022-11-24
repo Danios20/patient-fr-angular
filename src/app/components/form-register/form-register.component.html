@@ -1,0 +1,116 @@
+<button (click)="toggleSideMenu()">
+  <img src="./assets/images/add_custom.png" alt="add" width="60px" height="60px">
+</button>
+
+  <!-- SIDE MENU -->
+  <div class="show-mobile">
+    <div class="side-menu" [class.active]="activeSideMenu">
+      <button (click)="toggleSideMenu()">×</button>
+
+      <div class="login">
+        <div class="form-container">
+          <h1 class="title">New Patient</h1>
+          <form
+          class="form"
+          id="frmFor"
+          autocomplete="off"
+          [formGroup]="frmFormulario"
+          (ngSubmit)="sendData()"
+          >
+          <div>
+            <label for="patient" class="label">Patient *</label>
+            <input class="input input-name" formControlName="patient" type="text" id="patient" name="patient" placeholder="Digite el nombre del paciente">
+          </div>
+          <div *ngIf="
+          frmFormulario.get('patient')?.hasError('required') &&
+          !frmFormulario.get('patient')?.pristine">
+            El nombre es requerido
+          </div>
+          <div>
+            <label for="documentType" class="label">Document Type  *</label>
+            <input class="input input-name" formControlName="documentType" type="text" id="documentType" name="documentType" placeholder="Elija el tipo de documento">
+          </div>
+          <div *ngIf="
+          frmFormulario.get('documentType')?.hasError('required') &&
+          !frmFormulario.get('documentType')?.pristine">
+            El tipo documento es requerido
+          </div>
+          <div>
+            <label for="document" class="label">Document  *</label>
+            <input class="input input-name" formControlName="document" type="text" id="document" name="document" placeholder="Digite el documento">
+          </div>
+          <div *ngIf="
+          frmFormulario.get('document')?.hasError('required') &&
+          !frmFormulario.get('document')?.pristine">
+            El documento es requerido
+          </div>
+          <div>
+            <label for="email" class="label">Email *</label>
+            <input class="input input-name" formControlName="email" type="email" id="email" name="email" placeholder="Digite correo eléctronico">
+          </div>
+          <div *ngIf="frmFormulario.get('email')?.hasError('required') && !frmFormulario.get('email')?.pristine">
+            El correo electrónico es requerido
+          </div>
+          <div *ngIf="frmFormulario.get('email')?.hasError('email') && !frmFormulario.pristine">
+            La estructura del correo no es valida
+          </div>
+          <div>
+            <label for="address" class="label">Address  *</label>
+            <input class="input input-name" formControlName="address" type="text" id="address" name="address" placeholder="Digite la dirección">
+          </div>
+          <div *ngIf="
+          frmFormulario.get('address')?.hasError('required') &&
+          !frmFormulario.get('address')?.pristine">
+            La dirección es requerido
+          </div>
+          <div>
+            <label for="dentist" class="label">Dentist  *</label>
+            <input class="input input-name" formControlName="dentist" type="text" id="apellido" name="dentist" placeholder="Digite el nombre del dentista">
+          </div>
+          <div *ngIf="
+          frmFormulario.get('dentist')?.hasError('required') &&
+          !frmFormulario.get('dentist')?.pristine">
+            El nombre del profesional es requerido
+          </div>
+          <div>
+            <label for="bloodType" class="label">Blood Type  *</label>
+            <input class="input input-name" formControlName="bloodType" type="text" id="bloodType" name="bloodType" placeholder="Elija un tipo de sangre">
+          </div>
+          <div *ngIf="
+          frmFormulario.get('bloodType')?.hasError('required') &&
+          !frmFormulario.get('bloodType')?.pristine">
+            El tipo de sangre es requerido
+          </div>
+          <div>
+            <label for="treatment" class="label">Treatment  *</label>
+            <input class="input input-name" formControlName="treatment" type="text" id="treatment" name="treatment" placeholder="Digite el tratamiento">
+          </div>
+          <div *ngIf="
+          frmFormulario.get('treatment')?.hasError('required') &&
+          !frmFormulario.get('treatment')?.pristine">
+            El tipo de tratamiento es requerido
+          </div>
+          <div>
+            <label for="price" class="label">Price *</label>
+            <input class="input input-name" formControlName="price" type="number" id="price" name="price" placeholder="Digite el precio">
+          </div>
+          <div *ngIf="frmFormulario.get('price')?.hasError('required') && !frmFormulario.get('price')?.pristine">
+            El precio es requerido
+          </div>
+        </form>
+
+          <input
+          [ngClass]="{'primary-button login-button': frmFormulario.valid }"
+          [disabled]="frmFormulario.invalid"
+          value="Create"
+          form="frmFor"
+          type="submit"
+          id="btnEnviar">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+

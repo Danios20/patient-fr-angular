@@ -1,1 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url(./styles/reset.scss);
+
+* {
+  font-family: 'Quicksand', sans-serif;
+}
+
+// GLOBALS
+:root {
+  --very-light-pink: #C7C7C7;
+  --text-input-field: #F7F7F7;
+  --hospital-green: #050531;
+  --red: #ef3939;
+  --white: #FFFFFF;
+  --black: #000000;
+  --sm: 14px;
+  --md: 16px;
+  --lg: 18px;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif !important;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.products--grid {
+  app-img img {
+    border-radius: 12px;
+  }
+}
+
+.swal2-container .swal2-popup {
+  font-size: 1.6rem;
+  > .swal2-actions button {
+    background-color: var(--hospital-green);
+    box-shadow: none;
+  }
+}
+
